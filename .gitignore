@@ -1,2 +1,4 @@
+*.pyc
 *.csv
 /env
+src/housescrape/__pycache__/

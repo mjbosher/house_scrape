@@ -161,8 +161,12 @@ class ESPC:
             self.parse_site()
 
 
-def run_espc(proxy, place, file):
+def run_espc(proxy, place,file):
     espc = ESPC(place, proxy, file)
     espc.parse_areas()
-    # espc.parse_site()
+    return True
+
+def find_from_espc(proxy, place, file):
+    espc = ESPC(place, proxy, file)
+    espc.parse_site()
     return True
