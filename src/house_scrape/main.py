@@ -19,7 +19,7 @@ def main(proxy, place, file):
 
 if __name__ == "__main__":
     proxy = TimedRequests(limit=100, time=5)
-    place = "edinburgh"
+    place = None
 
     directory = "data"
     if place:

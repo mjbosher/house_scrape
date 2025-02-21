@@ -34,7 +34,14 @@ def to_csv(filename: str, data: list, headers: list):
     f.close()
     return True
 
-
+def check_row(filename, row):
+    if os.path.exists(filename):
+        f = open(filename, "r").readlines()
+        existing_data = [value.split(",")[1:-2] for value in f]
+        if row in existing_data:
+            return True
+    return False
+    
 class TimedRequests:
     def __init__(self, limit=15, time=10):
         self.time = time * 60

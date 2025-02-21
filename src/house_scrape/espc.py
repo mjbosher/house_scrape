@@ -2,17 +2,7 @@ import os
 from OSGridConverter import grid2latlong, latlong2grid
 import re
 from datetime import datetime
-from house_scrape.utils import postcode_regex, write_errors, to_csv
-
-
-def check_row(filename, row):
-    if os.path.exists(filename):
-        f = open(filename, "r").readlines()
-        existing_data = [value.split(",")[1:-2] for value in f]
-        if row in existing_data:
-            return True
-    return False
-
+from house_scrape.utils import postcode_regex, write_errors, to_csv, check_row
 
 class ESPC:
     def __init__(self, area: str, proxy, filename="houses.csv"):
